@@ -1,0 +1,13 @@
+<h1>Topics</h1>
+<ul>
+{% for topic in object_list %}
+    <li> 
+        Topic: {{ topic.title }}
+        <br>
+        Created by: {{ topic.created_by }}
+    </li>
+{% empty %}
+    <li>No topics yet.</li>
+{% endfor %}
+</ul>
+

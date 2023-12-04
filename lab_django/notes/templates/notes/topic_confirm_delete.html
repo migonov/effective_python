@@ -1,0 +1,18 @@
+{% block content %}
+    <h1>Topic delete</h1>
+    <h3>Are you sure?</h3>
+    <p>Do you want to delete <strong>{{ object }}</strong>?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input class="btn btn-link"
+               type="button" value="Cancel"
+               onclick="window.history.go(-1);"/>
+        <input class="btn btn-danger" type="submit" value="Confirm"/>
+    </form>
+{% endblock %}
+
+{% block side_menu %}
+    <li>
+        <a href="{% url "topic-list" %}">Topics list</a>
+    </li>
+{% endblock %}
